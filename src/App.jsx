@@ -27,8 +27,8 @@ export default function App() {
 }
 
 function AppContent({ tabs }) {
-  const location = useLocation(); 
-  const [activeTab, setActiveTab] = useState('types'); 
+  const location = useLocation();
+  const [activeTab, setActiveTab] = useState('types');
 
   useEffect(() => {
     const path = location.pathname;
@@ -40,9 +40,11 @@ function AppContent({ tabs }) {
 
   return (
     <Layout activeTab={activeTab} setActiveTab={setActiveTab}>
-      <h1 className="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+      <h1 className="text-4xl text-center md:text-5xl font-extrabold tracking-tight uppercase mb-6 
+               text-indigo-700 dark:text-indigo-300">
         Student Registration
       </h1>
+
 
       <Routes>
         <Route path="/" element={<Navigate to="/types" replace />} />

@@ -18,13 +18,19 @@ export default function RegistrationList() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1, duration: 0.5 }}
-                        className="p-5 bg-gray-50 border border-gray-200 rounded-2xl shadow hover:shadow-lg transition duration-300 ease-in-out"
+                        className="relative drop-shadow-xl w-64 h-40 overflow-hidden rounded-xl bg-[#3d3c3d]"
                     >
-                        <h3 className="text-lg font-semibold text-gray-800">{r.studentName}</h3>
-                        <p className="text-sm text-gray-500 mb-2">{r.email}</p>
-                        <p className="text-sm text-gray-700">
-                            Registered for <span className="font-medium italic">{type.name} - {course.name}</span>
-                        </p>
+                        <div className="absolute w-56 h-48 bg-white blur-[50px] -left-1/2 -top-1/2"></div>
+                        <div className="absolute inset-0.5 bg-[#323132] opacity-90 rounded-xl flex flex-col justify-center p-5 text-white transition-opacity duration-300 ease-in-out hover:opacity-100 z-10">
+                            <h3 className="text-lg font-semibold">{r.studentName}</h3>
+                            <p className="text-sm text-gray-300 mb-2">{r.email}</p>
+                            <p className="text-sm">
+                                Registered for{' '}
+                                <span className="font-medium italic text-indigo-200">
+                                    {type.name} – {course.name}
+                                </span>
+                            </p>
+                        </div>
                     </motion.div>
                 );
             })}

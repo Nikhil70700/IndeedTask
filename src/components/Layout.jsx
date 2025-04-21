@@ -32,7 +32,7 @@ export default function Layout({ children, activeTab, setActiveTab }) {
                             key={key}
                             onClick={() => {
                                 setActiveTab(key); // Set the active tab when clicked
-                                window.location.pathname = path; // Manually set the path for navigation
+                                window.location.pathname = path; 
                             }}
                             className={`flex items-center gap-2 px-3 py-2 rounded-lg text-left transition-all ${activeTab === key
                                     ? 'bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400'
@@ -55,7 +55,7 @@ export default function Layout({ children, activeTab, setActiveTab }) {
 
             <main className="flex-1 p-6 overflow-y-auto">
                 <div className="max-w-5xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 space-y-6">
-                    {children} {/* Render the child content */}
+                    {children}
                 </div>
             </main>
         </div>
